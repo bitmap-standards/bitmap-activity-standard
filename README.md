@@ -106,3 +106,22 @@ Future revisions should:
 	•	Remain minimal
 	•	Preserve backwards compatibility
 	•	Be openly discussed via issues and pull requests
+
+---
+
+## Live Implementation Example
+
+The Bitmap Activity Standard (BAS) is already live.
+
+The following territory implements BAS v0.1 using real on-chain inscriptions:
+
+- Territory: **3666.bitmap**
+- Parent inscription: `809660b04d441fec9ac760c4bc5484f94a78d17f3cccb8fe0ad42310877d4df7i0`
+- Anchor address: `bc1pv40yl4jyne02pulahpdrl98d2x3z9yd7g3c9kzm4ktyz69mdwe2qhmmrqz`
+
+Full implementation reference:
+
+[examples/3666-live-implementation.json](examples/3666-live-implementation.json)
+
+This file documents a deterministic sequence of child inscriptions
+anchored to a single parent inscription ID.
