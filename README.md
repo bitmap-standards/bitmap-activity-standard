@@ -125,3 +125,17 @@ Full implementation reference:
 
 This file documents a deterministic sequence of child inscriptions
 anchored to a single parent inscription ID.
+
+---
+
+## Reference Territories
+
+The following territories are known live implementations of BAS:
+
+1. **3666.bitmap**
+   - Parent inscription: `809660b04d441fec9ac760c4bc5484f94a78d17f3cccb8fe0ad42310877d4df7i0`
+   - Implementation file:
+     [examples/3666-live-implementation.json](examples/3666-live-implementation.json)
+
+Additional territories can be added via pull request once they
+demonstrate deterministic parent/child activity logging compliant with BAS.
