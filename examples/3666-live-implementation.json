@@ -1,0 +1,27 @@
+{
+  "bas_version": "0.1",
+  "territory": "3666.bitmap",
+  "parent_inscription_id": "809660b04d441fec9ac760c4bc5484f94a78d17f3cccb8fe0ad42310877d4df7i0",
+  "anchor_address": "bc1pv40yl4jyne02pulahpdrl98d2x3z9yd7g3c9kzm4ktyz69mdwe2qhmmrqz",
+  "implementation_status": "live",
+  "live_sequence": [
+    {
+      "sequence": 1,
+      "activity_type": "genesis_activation",
+      "inscription_id": "3dad893ee2df34e3c26db1cffad4c03a2929668f2ffe7ec8d25aade1a18e2125i0",
+      "block_height": 939430
+    },
+    {
+      "sequence": 2,
+      "activity_type": "lightning_proof",
+      "inscription_id": "3eac40940bf02eeac41b0f118950d15ebe8b33f04f79413d72e7003799a33e88i0",
+      "block_height": 939435
+    },
+    {
+      "sequence": 3,
+      "activity_type": "territory_standard_declaration",
+      "inscription_id": "fd0b09c88ad2b25fd2b33b36c2c12ab01196b998f059ac7f79495cd37a88abdci0",
+      "block_height": 939438
+    }
+  ]
+}
