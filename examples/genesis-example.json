@@ -1,0 +1,13 @@
+{
+  "bas_version": "0.1",
+  "territory": "3666.bitmap",
+  "parent_inscription_id": "PARENT_INSCRIPTION_ID_HERE",
+  "activity_type": "genesis",
+  "timestamp": 1700000000,
+  "actor_address": "bc1pXXXXXXXXXXXXXX",
+  "activity_inscription_id": "CHILD_INSCRIPTION_ID_HERE",
+  "metadata": {
+    "description": "Initial territory genesis declaration under BAS v0.1",
+    "notes": "Replace placeholder values with real on-chain references."
+  }
+}
