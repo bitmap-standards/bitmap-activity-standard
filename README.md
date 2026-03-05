@@ -279,3 +279,4 @@ BAS evolves through simple versioned releases.
 - Backward compatibility will be preserved whenever possible.
 
 Proposals for improvements can be submitted via GitHub Issues.
+---
