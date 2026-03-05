@@ -12,6 +12,62 @@ It leverages existing Bitcoin and Ordinals primitives.
 The goal is simple:
 Enable verifiable, machine-readable, and interoperable territory activity logs for Bitmap districts.
 
+## Why BAS v1?
+
+Current Bitmaps are static assets. BAS v1 introduces a standard way to log 
+on-chain activity, turning blocks into verifiable, hierarchical databases.
+
+### Core Architecture
+
+- **Parent:** The Bitmap Inscription ID (The Root / Territory)
+- **Child:** A JSON inscription linked to the Parent (The Event / Log)
+- **Sequence:** Deterministic integer ordering
+- **Version:** Explicit schema versioning for forward compatibility
+
+  ---
+
+## Specification
+
+This section defines the formal JSON structure required for BAS v0.1 compliance.
+
+### Required Fields (Child Inscription)
+
+A valid BAS child inscription MUST contain the following fields:
+
+- `type` (string)  
+  Must equal `"territory_event"` or `"territory_standard"`
+
+- `version` (string)  
+  Must equal `"bitmap_activity_v1"`
+
+- `territory` (string)  
+  The full bitmap name (e.g., `"3666.bitmap"`)
+
+- `parent_inscription_id` (string)  
+  The inscription ID of the parent bitmap
+
+- `sequence` (integer)  
+  Deterministic incremental integer (starting at 1)
+
+- `timestamp` (ISO 8601 string)  
+  UTC timestamp of event creation
+
+### Optional Fields
+
+- `description` (string)
+- `activity` (object)
+- `standard` (object)
+- `metadata` (object)
+
+### Deterministic Ordering
+
+Ordering of events MUST be determined exclusively by the `sequence` field.  
+Block height or inscription number MUST NOT define logical order.
+
+### Forward Compatibility
+
+Future versions of BAS MUST increment the `version` field and preserve backward readability.
+  
 ---
 
 ## Why This Standard Exists
@@ -126,6 +182,25 @@ Full implementation reference:
 This file documents a deterministic sequence of child inscriptions
 anchored to a single parent inscription ID.
 
+### On-Chain Reference (3666.bitmap)
+
+The following inscriptions form the first live BAS sequence:
+
+- **Parent (Bitmap Root)**
+  - `809660b04d441fec9ac760c4bc5484f94a78d17f3cccb8fe0ad42310877d4df7i0`
+
+- **Sequence 1 — Genesis Activation**
+  - `3dad893ee2df34e3c26db1cffad4c03a2929668f2ffe7ec8d25aade1a18e2125i0`
+  - Block Height: `939430`
+
+- **Sequence 2 — First Activity (Lightning Proof)**
+  - `3eac40940bf02eeac41b0f118950d15ebe8b33f04f79413d72e7003799a33e88i0`
+  - Block Height: `939435`
+
+- **Sequence 3 — Territory Standard Declaration**
+  - `fd0b09c88ad2b25fd2b33b36c2c12ab01196b998f059ac7f79495cd37a88abdci0`
+  - Block Height: `939438`
+
 ---
 
 ## Reference Territories
@@ -139,3 +214,50 @@ The following territories are known live implementations of BAS:
 
 Additional territories can be added via pull request once they
 demonstrate deterministic parent/child activity logging compliant with BAS.
+
+---
+
+## How to Implement BAS v0.1
+
+Follow these steps to implement the Bitmap Activity Standard.
+
+### 1️⃣ Identify Parent
+
+Locate your Bitmap inscription ID.  
+This acts as the root (territory anchor).
+
+Example:
+
+`809660b04d441fec9ac760c4bc5484f94a78d17f3cccb8fe0ad42310877d4df7i0`
+
+---
+
+### 2️⃣ Format Activity JSON
+
+Create a JSON object that follows the BAS v0.1 specification.
+
+Minimum required structure:
+
+```json
+{
+  "type": "territory_event",
+  "version": "bitmap_activity_v1",
+  "territory": "YOUR_BITMAP.bitmap",
+  "parent_inscription_id": "PARENT_ID",
+  "sequence": 1,
+  "timestamp": "YYYY-MM-DDTHH:MM:SSZ"
+}
+
+---
+
+### 3️⃣ Inscribe as Child
+
+Use your preferred Ordinals tool:
+
+- UniSat  
+- Ordinals Wallet  
+- CLI tools  
+
+Ensure the inscription is explicitly linked as a child of the parent inscription ID.
+
+The `sequence` value MUST increment deterministically.
