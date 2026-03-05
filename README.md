@@ -1,6 +1,8 @@
 # Bitmap Activity Standard (BAS)
 
-Version: v0.1 (Draft)
+Version: v0.1
+
+Status: Stable
 
 ## Overview
 
