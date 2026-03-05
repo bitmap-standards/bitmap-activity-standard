@@ -1,5 +1,9 @@
 # Bitmap Activity Standard (BAS)
 
+> This repository defines the canonical Bitmap Activity Standard (BAS) v0.1 specification.
+> Any implementation claiming BAS v0.1 compatibility MUST conform to the JSON schema
+> defined in the Specification section of this document.
+
 Version: v0.1
 
 Status: Stable
@@ -263,3 +267,15 @@ Use your preferred Ordinals tool:
 Ensure the inscription is explicitly linked as a child of the parent inscription ID.
 
 The `sequence` value MUST increment deterministically.
+
+---
+
+## Governance
+
+BAS evolves through simple versioned releases.
+
+- BAS v0.1 — Initial stable release
+- Future updates will increment the version (v0.2, v1.0, etc.)
+- Backward compatibility will be preserved whenever possible.
+
+Proposals for improvements can be submitted via GitHub Issues.
