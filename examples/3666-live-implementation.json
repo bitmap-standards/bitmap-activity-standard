@@ -9,19 +9,33 @@
       "sequence": 1,
       "activity_type": "genesis_activation",
       "inscription_id": "3dad893ee2df34e3c26db1cffad4c03a2929668f2ffe7ec8d25aade1a18e2125i0",
-      "block_height": 939430
+      "block_height": 939430,
+      "date": "2026-03-05"
     },
     {
       "sequence": 2,
       "activity_type": "lightning_proof",
       "inscription_id": "3eac40940bf02eeac41b0f118950d15ebe8b33f04f79413d72e7003799a33e88i0",
-      "block_height": 939435
+      "block_height": 939435,
+      "date": "2026-03-05",
+      "note": "On-chain record of a Lightning payment that occurred off-chain on 2026-02-18. Payment hash: 2837ecabef7d3915297fc610dc19308743fd891f701fc1c8b2cc0a1c26ecb10e. The BAS inscription anchors that off-chain event to Bitcoin finality."
     },
     {
       "sequence": 3,
       "activity_type": "territory_standard_declaration",
       "inscription_id": "fd0b09c88ad2b25fd2b33b36c2c12ab01196b998f059ac7f79495cd37a88abdci0",
-      "block_height": 939438
+      "block_height": 939438,
+      "date": "2026-03-05"
+    },
+    {
+      "sequence": 4,
+      "activity_type": "agent_entry",
+      "inscription_id": "75796d260ab6e669fa352eb7c0a159ba6fcddc2477a7893acd19be8db496fdc4i0",
+      "block_height": 946493,
+      "date": "2026-04-24",
+      "actor": "proteon",
+      "network": "myceleon",
+      "gate": "xrswapgate.bitmap"
     }
   ]
 }
